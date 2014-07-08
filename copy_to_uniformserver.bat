@@ -5,4 +5,5 @@
 @mkdir %about_php_dir%
 
 @copy /y *.html       %about_php_dir%
+@copy /y *.php        %about_php_dir%
 @copy /y .htaccess    %about_php_dir%
