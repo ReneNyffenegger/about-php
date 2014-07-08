@@ -1,0 +1,28 @@
+<!--
+
+  http://www.adp-gmbh.ch/php/pass_by_reference.html
+
+-->
+<html>
+<head><title>pass by reference / pass by value</title></head>
+<body>
+
+<?php
+
+  function pass_by_value    ( $param) { array_push($param, 'val1', 'val2'); }
+  function pass_by_reference(&$param) { array_push($param, 'ref1', 'ref2'); }
+
+  $ar = array('foo', 'bar', 'baz');
+
+  pass_by_value    ($ar);
+  pass_by_reference($ar);
+
+  foreach ($ar as $elem) {
+    print "<br>$elem";
+  } 
+
+?>
+
+</body>
+</html>
+
