@@ -1,0 +1,28 @@
+<html><head><title>Array</title></head>
+<body>
+
+  <?php 
+   
+    $a = array('one', 'two', 'three'); // Array with three elements
+    
+    $a[] = 'four';                     // Append 'four' to the array:
+    array_push($a, 'five');            // Same thing, but with array_push:
+
+    // Iterating over the array's elements:
+    foreach ($a as $val) {
+      print "<br>$val";
+    }
+
+    print "<p>";
+
+    foreach ($a as $ix => $val) {
+      print "<br>$ix: $val";
+    }
+
+  ?>
+
+  <p><a href='http://www.adp-gmbh.ch/php/array.html'>Go here</a>
+
+</body>
+</html>
+
