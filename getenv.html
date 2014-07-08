@@ -1,0 +1,48 @@
+<html>
+<head><title>getenv</title></head>
+<body>
+
+<table summary='getenv'>
+
+<?php
+
+foreach (array (
+   'AUTH_TYPE',
+   'CONTENT_LENGTH',
+   'CONTENT_TYPE',
+   'GATEWAY_INTERFACE',
+   'HTTP_ACCEPT',
+   'HTTP_USER_AGENT',
+   'PATH_INFO',
+   'PATH_TRANSLATED',
+   'QUERY_STRING',
+   'REMOTE_ADDR',
+   'REMOTE_HOST',
+   'REMOTE_IDENT',
+   'REMOTE_USER',
+   'REQUEST_METHOD',
+   'SCRIPT_NAME',
+   'SERVER_NAME',
+   'SERVER_PORT',
+   'SERVER_PROTOCOL',
+   'SERVER_SOFTWARE',
+) as $var) {
+
+  print "<tr><td>$var</td><td>".getenv($var)."</td></tr>";
+
+}
+
+?>
+</table>
+
+
+<p><a href='getenv.html?foo=bar&amp;fruit=apple'>Try with QUERY_STRING</a>
+
+<form method="post">
+  <input name="foo" value="bar"> 
+  <input type="submit" value="Try POST method">
+</form>
+
+</body>
+</html>
+
