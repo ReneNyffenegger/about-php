@@ -1,0 +1,30 @@
+<?php session_start(); ?>
+<!--   http://stackoverflow.com/a/13742117/180275 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Session Test</title>
+</head>
+<body>
+
+  <?php
+
+
+  if(isset($_SESSION['counter'])) {
+    $_SESSION['counter'] ++;
+  }
+  else {
+    $_SESSION['counter'] = 1;
+  }
+
+  echo "counter: " . $_SESSION['counter'];
+
+  ?>
+
+  Link to itself: <a href='_SESSION.html'>_SESSION.html</a>
+
+  <br>Also try reloading with F5.
+
+
+</body>
+</html>
