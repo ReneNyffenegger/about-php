@@ -1,0 +1,52 @@
+<html><head><title>preg_match example with PHP</title></head>
+<body>
+
+<table summary='match results'>
+
+<?php
+
+  function does_match($p, $t) {
+
+    print "<tr><td>$t</td><td>";
+
+    if (preg_match($p, $t)) {
+      print "matches";
+    }
+    else {
+      print "doesn't match";
+    }
+
+    print "</td><td>$p</td></tr>";
+
+  }
+
+  $pattern  = '/foo/i';
+  $with_foo = 'I have a Foo.';
+  $no_foo   = 'I do not.';
+
+  does_match($pattern, $with_foo);
+  does_match($pattern, $no_foo);
+
+  $pattern = '/\[in\]/';
+  $in_1    = 'does [in] match?';
+  $in_2    = 'does in match?';
+
+  $pattern = '/[in]/';
+  $in_1    = 'abcdefgh jklm opqrs uvwxyz';
+  $in_2    = 'abdef ghij lm opq stu wxyz';
+
+  does_match($pattern, $in_1);
+  does_match($pattern, $in_2);
+
+  $pattern = '/end$/';
+  $dollar_1= 'at the end';
+  $dollar_2= 'at the end NOT';
+
+  does_match($pattern, $dollar_1);
+  does_match($pattern, $dollar_2);
+
+?>
+
+</table>
+
+</body><html>
