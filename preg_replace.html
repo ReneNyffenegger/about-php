@@ -1,0 +1,23 @@
+<html><head><title>preg_replace example with PHP</title></head>
+<body>
+
+<pre>
+
+<?php
+
+  $pattern = '/foo/i';
+  $replace = 'bar';
+  $text    = 'one foo and another FOO to be replaced';
+
+  print "pattern: " . $pattern . "<br>";
+  print "replace: " . $replace . "<br>";
+  print "text:    " . $text    . "<br>";
+  print "result:  " . preg_replace($pattern, $replace, $text);
+
+?>
+
+</pre>
+
+<p>See also <a href='preg_match.html'>preg_match.html</a>.
+
+</body><html>
