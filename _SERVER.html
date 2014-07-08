@@ -1,0 +1,61 @@
+<html>
+<head><title>$_SERVER</title></head>
+<body>
+
+<table summary='getenv'>
+
+<?php
+
+foreach (array (
+  'argc',
+  'argv',
+  'DOCUMENT_ROOT',
+  'GATEWAY_INTERFACE',
+  'HTTP_ACCEPT',
+  'HTTP_ACCEPT_CHARSET',
+  'HTTP_ACCEPT_ENCODING',
+  'HTTP_ACCEPT_LANGUAGE',
+  'HTTP_CONNECTION',
+  'HTTP_HOST',
+  'HTTP_REFERER',
+  'HTTP_USER_AGENT',
+  'PATH_TRANSLATED',
+  'PHP_AUTH_PW',
+  'PHP_AUTH_USER',
+  'PHP_SELF',
+  'QUERY_STRING',
+  'REMOTE_ADDR',
+  'REMOTE_HOST',
+  'REMOTE_PORT',
+  'REQUEST_METHOD',
+  'REQUEST_URI',
+  'SCRIPT_FILENAME',
+  'SCRIPT_NAME',
+  'SERVER_ADMIN',
+  'SERVER_NAME',
+  'SERVER_PORT',
+  'SERVER_PROTOCOL',
+  'SERVER_SIGNATURE',
+  'SERVER_SOFTWARE',
+  ) as $var) {
+
+  print "<tr><td>$var</td><td>" . $_SERVER[$var] . "</td></tr>";
+
+}
+
+?>
+</table>
+
+
+<p><a href='_SERVER.html?foo=bar'>Show HTTP_REFERRER and QUERY_STRING</a>
+
+<form method="post">
+  <input name="foo" value="bar"> 
+  <input type="submit" value="Try POST method">
+</form>
+
+<p>See also <a href='getenv.html'>getenv.html</a>.
+
+</body>
+</html>
+
