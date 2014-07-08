@@ -1,0 +1,41 @@
+<html>
+<head><title>a php class</title></head>
+<body>
+
+
+<?php
+
+class aClass {
+
+  var $foo;
+  var $bar;
+  var $baz;
+
+  function show() {
+    print "Foo: " . $this->foo . "<br>";
+    print "Bar: " . $this->bar . "<br>"; 
+    print "Baz: " . $this->baz . "<p>";
+  }
+
+  function init($foo_, $bar_, $baz_) {
+    $this->foo  = $foo_;
+    $this->bar  = $bar_;
+    $this->baz  = $baz_;
+  }
+}
+
+
+ $obj1=new aClass;
+ $obj2=new aClass;
+
+ $obj1->init("one" , "two" , "three");
+ $obj2->init("eins", "zwei", "drei" );
+
+ $obj1->show();
+ $obj2->show();
+
+?>
+
+</body>
+</html>
+
