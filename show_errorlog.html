@@ -1,0 +1,24 @@
+<html>
+<head><title>pass by reference / pass by value</title></head>
+<body>
+
+<?php
+
+  $log_file = getenv('US_ROOTF') . // UniformServer Root
+             '/core/apache2/logs/error.log';
+
+  print "Content of <b>$log_file</b><br>";
+
+  print "<pre>";
+  print file_get_contents($log_file);
+  print "</pre>";
+
+?>
+
+<h1>Links</h1>
+
+  See also <a href='getenv.html'>getenv('US_ROOTF')</a>.
+
+</body>
+</html>
+
