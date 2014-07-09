@@ -1,0 +1,21 @@
+<html>
+<head><title>pass by reference / pass by value</title></head>
+<body>
+
+<?php
+
+  if (defined('FOO')) {
+     print "FOO is defined<br>";
+  }
+  else {
+     print "FOO is not defined<br>";
+  }
+
+  define ('FOO', 'bar');
+
+  print "FOO = " . FOO;
+
+?>
+
+</body>
+</html>
