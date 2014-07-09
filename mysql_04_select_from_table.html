@@ -1,0 +1,37 @@
+<html>
+<head><title>mysql: Select from a table</title></head>
+<body>
+
+<?php
+
+  $db_conn = new mysqli('localhost', 'rene', 'renes_secret');
+
+  if ($db_conn -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $db_conn -> connect_error;
+    return;
+  }
+
+//print "Connected as <code>rene</code><br>";
+
+  $db_conn -> select_db("renes_db");
+
+  $stmt = $db_conn->query("select id, txt from tq84_table");
+
+  print "<table>\n";
+  while ($row = $stmt->fetch_array()) {
+
+    printf (" <tr><td>%d</td><td>%s</td></tr>\n", $row['id'], $row['txt']);
+
+  }
+  print "</table>";
+
+
+  $stmt    -> close();
+  $db_conn -> close();
+
+?>
+
+<p>Now, <a href='mysql_05_cleanup.html'>clean the thing up</a>
+
+</body>
+</html>

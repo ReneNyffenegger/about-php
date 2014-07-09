@@ -1,0 +1,37 @@
+<html>
+<head><title>mysql: Fill a table</title></head>
+<body>
+
+<?php
+
+  $db_conn = new mysqli('localhost', 'rene', 'renes_secret');
+
+  if ($db_conn -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $db_conn -> connect_error;
+    return;
+  }
+
+  print "Connected as <code>rene</code><br>";
+
+  $db_conn -> select_db("renes_db");
+
+  if (! $stmt = $db_conn -> prepare ("insert into tq84_table (id, txt) values (?, ?)") ) {
+    print "Could not prepare statment: " . $db_conn->error;
+    return;
+  }
+
+  $stmt -> bind_param('is', $i, $t); # i: integer, s: string
+
+  $i = 1; $t = 'one'  ; $stmt -> execute() or trigger_error($db_conn->error); printf ("inserted: %d rows<br>", $stmt->affected_rows);
+  $i = 2; $t = 'two'  ; $stmt -> execute() or trigger_error($db_conn->error); printf ("inserted: %d rows<br>", $stmt->affected_rows);
+  $i = 3; $t = 'three'; $stmt -> execute() or trigger_error($db_conn->error); printf ("inserted: %d rows<br>", $stmt->affected_rows);
+
+  $stmt    -> close();
+  $db_conn -> close();
+
+?>
+
+<p>Now, <a href='mysql_04_select_from_table.html'>select from the table</a>.
+
+</body>
+</html>

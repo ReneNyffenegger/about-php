@@ -1,0 +1,48 @@
+<html>
+<head><title>mysql: Create user</title></head>
+<body>
+
+<?php
+
+  $db_conn = new mysqli('localhost', 'root', 'root');
+
+  if ($db_conn -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $db_conn -> connect_error;
+    return;
+  }
+
+  print "Connected as <code>root</code><br>";
+
+  if (! $db_conn -> query("create user rene@localhost identified by 'renes_secret';") === TRUE) {
+    print ("Could not create user <code>rene@localhost</code>: " . $db_conn -> error);
+//  return;
+  }
+  else {
+    print "User <code>rene@localhost created</code><br>";
+  }
+
+  if (! $db_conn -> query("create database renes_db") === TRUE) {
+    print ("Could not create database <code>renes_db</code>: " . $db_conn -> error);
+//  return;
+  }
+  else {
+    print "Database <code>renes_db</code> created<br>";
+  }
+
+  
+  if (! $db_conn -> query("grant all on renes_db.* to rene;") === TRUE) {
+    print ("Could not grant all on renes_db: " . $db_conn -> error);
+//  return;
+  }
+  else {
+    print "All privileges on <code>renes_db</code> granted<br>";
+  }
+
+  $db_conn -> close();
+
+?>
+
+<p>Now, <a href='mysql_02_create_table.html'>create a table</a>.
+
+</body>
+</html>

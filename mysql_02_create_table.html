@@ -1,0 +1,32 @@
+<html>
+<head><title>mysql: Create a table</title></head>
+<body>
+
+<?php
+
+  $db_conn = new mysqli('localhost', 'rene', 'renes_secret');
+
+  if ($db_conn -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $db_conn -> connect_error;
+    return;
+  }
+
+  print "Connected as <code>rene</code><br>";
+
+  $db_conn -> select_db("renes_db");
+
+  if (! $db_conn -> query("create table tq84_table(id integer, txt varchar(20))" ) === TRUE) {
+    print ("Could not create table <code>tq84_table</code>: " . $db_conn -> error);
+    return;
+  }
+
+  print "Table <code>tq84_table</code> created<br>";
+
+  $db_conn -> close();
+
+?>
+
+<p>Now, <a href='mysql_03_insert_into_table.html'>Fill the table</a>.
+
+</body>
+</html>
