@@ -27,6 +27,7 @@ foreach (array (
    'SERVER_PORT',
    'SERVER_PROTOCOL',
    'SERVER_SOFTWARE',
+   'US_ROOTF',          // Set to UniformServer installation root by UniformServer
 ) as $var) {
 
   print "<tr><td>$var</td><td>".getenv($var)."</td></tr>";
