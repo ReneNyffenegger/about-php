@@ -1,0 +1,35 @@
+<html>
+<head><title>pass by reference / pass by value</title></head>
+<body>
+
+<?php
+
+  class class_with_constructor {
+
+    public function __construct($foo_, $bar_, $baz_) {
+      $this->foo = $foo_;
+      $this->bar = $bar_;
+      $this->baz = $baz_;
+    }
+
+    public function show($title) {
+      print "<h1>$title</h1>";
+      print "Foo: " . $this->foo . "<br>";
+      print "Bar: " . $this->bar . "<br>";
+      print "Baz: " . $this->baz . "<br>";
+    }
+  }
+
+  $obj_1 = new class_with_constructor('foo', 'bar', 'baz'  );
+  $obj_2 = new class_with_constructor('one', 'two', 'three');
+
+  $obj_1->show('obj_1');
+  $obj_2->show('obj_2');
+
+?>
+
+<p>See also <a href='class.html'>class.html</w>.
+
+</body>
+</html>
+
