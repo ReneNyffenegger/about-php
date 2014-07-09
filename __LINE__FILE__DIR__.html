@@ -1,11 +1,17 @@
 <html>
 <head><title>__LINE__ __FILE__ __DIR__</title></head>
+  <style type="text/css">
+    tr {vertical-align: top}
+    td:nth-child(2) {width:40%} /* Path should not be broken on two lines except on small monitors. */
+  </style>
 <body>
 
-  <table>
-    <tr><td>__LINE__</td><td><?php echo __LINE__ ?></td><td></td></tr>
-    <tr><td>__FILE__</td><td><?php echo __FILE__ ?></td><td>Compare with <a href='_SERVER.html'><code>$_SERVER['SCRIPT_FILENAME']</code></a></td></tr>
-    <tr><td>__DIR__ </td><td><?php echo __DIR__  ?></td><td></td></tr>
+  <table border=1>
+    <tr><td>__LINE__</td><td><?php echo __LINE__ ?></td><td>&nbsp;</td></tr>
+    <tr><td>__FILE__</td><td><?php echo __FILE__ ?></td><td>Compare with <a href='_SERVER.html'><code>$_SERVER['SCRIPT_FILENAME']</code></a>. Especially windows
+                                                            uses backslashes in <code>__FILE__</code> while <code>$_SERVER['SCRIPT_FILENAME']</code> uses 
+                                                            forward slashes.</td></tr>
+    <tr><td>__DIR__ </td><td><?php echo __DIR__  ?></td><td>&nbsp;</td></tr>
   </table>
 
 </body>
