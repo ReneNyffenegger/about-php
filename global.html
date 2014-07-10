@@ -1,0 +1,39 @@
+<html><head><title>global Variables</title></head>
+<body>
+
+  <?php 
+
+    global  $one;
+
+    $one = "one outside of function";
+    $two = "two outside of function";
+    $thr = "thr outside of function";
+
+    f();
+    
+    print "<h1>Returned from f()</h1>";
+
+    print "one: $one<br>";
+    print "two: $two<br>";
+    print "thr: $thr<br>";
+
+    function f() {
+
+       print "<h1>in f()</h1>";
+
+       global $thr;
+
+       print "one: $one<br>";
+       print "two: $two<br>";
+       print "thr: $thr<br>";
+
+       $one = "one inside of function";
+       $two = "two inside of function";
+       $thr = "thr inside of function";
+
+    }
+
+  ?>
+
+</body>
+</html>
