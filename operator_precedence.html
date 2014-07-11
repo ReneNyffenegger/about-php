@@ -1,0 +1,47 @@
+<html><head><title>operator precedence</title></head>
+<body>
+
+
+  <?php
+
+
+    function b($t) {
+      print $t ? "<span style='background-color:#7f7'>true</span>" : "<span style='background-color:red'>false</span>";
+    }
+
+    function test_1 ($b1, $b2, $b3) { ?>
+
+
+      <table border = 1>
+        <tr><td><pre> <?php b($b1); ?> &amp;&amp;  <?php b($b2); ?>  || <?php b($b3); ?> </pre></td><td><pre><?php  b (    $b1 &&  $b2  || $b3    ); ?></pre></td></tr>
+        <tr><td><pre>(<?php b($b1); ?> &amp;&amp;  <?php b($b2); ?>) || <?php b($b3); ?> </pre></td><td><pre><?php  b (   ($b1 &&  $b2) || $b3    ); ?></pre></td></tr>
+        <tr><td><pre> <?php b($b1); ?> &amp;&amp; (<?php b($b2); ?>  || <?php b($b3); ?>)</pre></td><td><pre><?php  b (    $b1 && ($b2  || $b3)   ); ?></pre></td></tr>
+      </table>
+
+      <p>
+
+    <?php }
+
+  ?>
+
+  <h1>Operator precedence</h1>
+
+  &amp;&amp; has higher precedence as ||<p>
+
+    <?php
+
+      for ($b1=0;$b1<2;$b1++) {
+      for ($b2=0;$b2<2;$b2++) {
+      for ($b3=0;$b3<2;$b3++) {
+
+        test_1($b1 == 0, $b2 == 0, $b3 == 0);
+
+      }}}
+
+    ?>
+
+
+
+</body>
+</html>
+
