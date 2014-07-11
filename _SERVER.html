@@ -60,6 +60,20 @@ foreach (array (
    See also <a href='getenv.html'>getenv.html</a>.
 <p>Compare <code>$_SERVER['SCRIPT_FILENAME']</code> with <a href='__LINE__FILE__DIR__.html'><code>__FILE__</code></a>
 
+<p>Also compare
+  <table>
+    <tr><td><code>$_SERVER['PHP_SELF']       </code></td><td><?php echo $_SERVER['PHP_SELF'       ] ?><tr>
+    <tr><td><code>$_SERVER['REQUEST_URI']    </code></td><td><?php echo $_SERVER['REQUEST_URI'    ] ?><tr>
+    <tr><td><code>$_SERVER['SCRIPT_NAME']    </code></td><td><?php echo $_SERVER['SCRIPT_NAME'    ] ?><tr>
+    <tr><td><code>__FILE__                   </code></td><td><?php echo __FILE__                    ?><tr>
+    <tr><td><code>$_SERVER['PATH_TRANSLATED']</code></td><td><?php echo $_SERVER['PATH_TRANSLATED'] ?><tr>
+  </table>
+    bu clicking on these urls 
+    <a href='/about_php/_SERVER.html'>/about_php/_SERVER.html</a>, 
+    <a href='/about_php/_SERVER.html/some/inexisting/path'>/about_php/_SERVER/some/inexisting/path</a>,
+    <a href='/about_php/_SERVER.html?foo=bar'>/about_php/_SERVER.html?foo=bar</a>
+    
+
 </body>
 </html>
 
