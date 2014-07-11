@@ -25,6 +25,8 @@
   $i = 1; $t = 'one'  ; $stmt -> execute() or trigger_error($db_conn->error); printf ("inserted: %d rows<br>", $stmt->affected_rows);
   $i = 2; $t = 'two'  ; $stmt -> execute() or trigger_error($db_conn->error); printf ("inserted: %d rows<br>", $stmt->affected_rows);
   $i = 3; $t = 'three'; $stmt -> execute() or trigger_error($db_conn->error); printf ("inserted: %d rows<br>", $stmt->affected_rows);
+  $i = 4; $t = 'four' ; $stmt -> execute() or trigger_error($db_conn->error); printf ("inserted: %d rows<br>", $stmt->affected_rows);
+  $i = 5; $t = 'five' ; $stmt -> execute() or trigger_error($db_conn->error); printf ("inserted: %d rows<br>", $stmt->affected_rows);
 
   $stmt    -> close();
   $db_conn -> close();
