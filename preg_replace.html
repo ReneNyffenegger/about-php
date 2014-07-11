@@ -18,6 +18,21 @@
 
 </pre>
 
+<h2>preg_replace with arrays</h2>
+
+<code>
+<?php
+
+  $text = 'one foo and another FOO to be replaced';
+
+  print "result: " . preg_replace( 
+                           array('/foo/i' ,'/ to be /'),
+                           array( 'bar'   , ' were '  ),
+                           $text);
+
+?>
+</code>
+
 <p>See also <a href='preg_match.html'>preg_match.html</a>.
 
 </body><html>
