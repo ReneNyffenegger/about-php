@@ -1,0 +1,15 @@
+<html><head><title>strip_tags</title></head>
+<body>
+
+  <?php 
+   
+    $html_snippet = "Now, for <i>something</i> very <b>bold</b>!";
+
+    $html_rest    = strip_tags($html_snippet, "<b>"); # Don't remove <b> tags
+
+    echo '$html_rest: ' . htmlspecialchars($html_rest);
+
+  ?>
+    
+</body>
+</html>
