@@ -46,7 +46,7 @@
   $db_conn -> select_db("renes_db");
 
   $stmt = $db_conn->prepare("select id, txt from tq84_table where id > ?");
-  ctwo = 2;
+  $two = 2;
   $stmt -> bind_param('i', $two);
   $stmt -> execute();
 
