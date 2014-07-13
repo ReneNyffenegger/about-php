@@ -30,6 +30,16 @@
                            array( 'bar'   , ' were '  ),
                            $text);
 
+  print "<p>";
+
+  $text = 'The word is: strawberry';
+
+  #                        Replace from left to right.
+  print "result: " . preg_replace(  
+                           array( '/strawberry/', '@lemon@', '!orange!'),
+                           array(  'lemon'      ,  'orange',  'pear'   ),
+                           $text);
+
 ?>
 </code>
 
