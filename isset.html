@@ -13,15 +13,21 @@
      $var_2     =     2 ;
      $var_      =    "" ;
      $var_0     =     0 ;
-     $var___    =  "   ";
+     $var___    =  "  " ;
+     $var_null  =  null ;
 
 
-     if ( isset ($var_foo  ) ) print "var_foo is set<br>"; else print "var_foo is <b>not</b> set<br>"; // var_foo is set
-     if ( isset ($var_2    ) ) print "var_2   is set<br>"; else print "var_2   is <b>not</b> set<br>"; // var_2 is set
-     if ( isset ($var_     ) ) print "var_    is set<br>"; else print "var_    is <b>not</b> set<br>"; // var_ is set
-     if ( isset ($var_0    ) ) print "var_0   is set<br>"; else print "var_0   is <b>not</b> set<br>"; // var_0 is set
-     if ( isset ($var___   ) ) print "var___  is set<br>"; else print "var___  is <b>not</b> set<br>"; // var___ is set
-     if ( isset ($var_na   ) ) print "var_na  is set<br>"; else print "var_na  is <b>not</b> set<br>"; // var_na is not set
+     if ( isset ($var_foo  ) ) print "var_foo  is set<br>"; else print "var_foo  is <b>not</b> set<br>"; // var_foo is set
+     if ( isset ($var_2    ) ) print "var_2    is set<br>"; else print "var_2    is <b>not</b> set<br>"; // var_2 is set
+     if ( isset ($var_     ) ) print "var_     is set<br>"; else print "var_     is <b>not</b> set<br>"; // var_ is set
+     if ( isset ($var_0    ) ) print "var_0    is set<br>"; else print "var_0    is <b>not</b> set<br>"; // var_0 is set
+     if ( isset ($var___   ) ) print "var___   is set<br>"; else print "var___   is <b>not</b> set<br>"; // var___ is set
+     if ( isset ($var_null ) ) print "var_null is set<br>"; else print "var_null is <b>not</b> set<br>"; // var_null is not set
+     if ( isset ($var_na   ) ) print "var_na   is set<br>"; else print "var_na   is <b>not</b> set<br>"; // var_na is not set
+
+     unset ($var_2);
+
+     if ( isset ($var_2    ) ) print "var_2    is set<br>"; else print "var_2    is <b>not</b> set<br>"; // var_2 is not set
 
   ?>
 
