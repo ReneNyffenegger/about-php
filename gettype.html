@@ -1,0 +1,17 @@
+<html><head><title>gettype</title>
+  <style type="text/css">
+    td {margin-left: 0.5em;}
+  </style>
+</head>
+
+<body>
+
+  <table summary='gettype'>
+    <tr><td>42                  </td><td><?php print gettype( 42                 );  ?></td></tr> <!-- integer    -->
+    <tr><td>42.42               </td><td><?php print gettype( 42.42              );  ?></td></tr> <!-- double     -->
+    <tr><td>array('one'       ) </td><td><?php print gettype( array('one'      ) );  ?></td></tr> <!-- array      -->
+    <tr><td>array('one =&gt; 1) </td><td><?php print gettype( array('one' => 1 ) );  ?></td></tr> <!-- array      -->
+  </table>
+
+</body>
+</html>
