@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>empty</title>
+</head>
+<body>
+
+  <?php
+
+
+     $var_foo   =  "foo";
+     $var_2     =     2 ;
+     $var_      =    "" ;
+     $var_0     =     0 ;
+     $var___    =  "  " ;
+     $var_null  =  null ;
+
+
+     if ( empty ($var_foo  ) ) print "var_foo  is empty<br>"; else print "var_foo  is <b>not</b> empty<br>"; // var_foo  is not empty
+     if ( empty ($var_2    ) ) print "var_2    is empty<br>"; else print "var_2    is <b>not</b> empty<br>"; // var_2    is not empty
+     if ( empty ($var_     ) ) print "var_     is empty<br>"; else print "var_     is <b>not</b> empty<br>"; // var_     is     empty
+     if ( empty ($var_0    ) ) print "var_0    is empty<br>"; else print "var_0    is <b>not</b> empty<br>"; // var_0    is     empty
+     if ( empty ($var___   ) ) print "var___   is empty<br>"; else print "var___   is <b>not</b> empty<br>"; // var___   is not empty
+     if ( empty ($var_null ) ) print "var_null is empty<br>"; else print "var_null is <b>not</b> empty<br>"; // var_null is     empty
+     if ( empty ($var_na   ) ) print "var_na   is empty<br>"; else print "var_na   is <b>not</b> empty<br>"; // var_na   is     empty
+
+     unset ($var_2);
+
+     if ( empty ($var_2    ) ) print "var_2    is empty<br>"; else print "var_2    is <b>not</b> empty<br>"; // var_2    is not empty
+
+  ?>
+
+  <p>Compare with <a href='isset.html'>isset.html</a>
+
+</body>
+</html>
