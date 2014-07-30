@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Form Handling in PHP</title>
+</head>
+<body>
+
+   <form action="#" method="post">
+
+     <table>
+       <tr><td>This input does not use <a href='htmlspecialchars.html'>htmlspecialchars</a>:</td><td> <input type="text" name="text_1" value="<?php echo isset($_POST['text_1']) ?                  $_POST['text_1']  : '<foo>&amp;amp;<bar>'; ?>" ></td></tr>
+       <tr><td>This input does:                                                             </td><td> <input type="text" name="text_2" value="<?php echo isset($_POST['text_2']) ? htmlspecialchars($_POST['text_2']) : '<foo>&amp;amp;<bar>'; ?>" ></td></tr>
+     </table>
+
+     <br><input type="submit" value="go">
+
+   </form>
+
+
+</body>
+</html>
+
