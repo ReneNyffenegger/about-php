@@ -5,13 +5,15 @@
    
     $html_snippet = "Now, for <i>something</i> very <b>bold</b>!";
 
-    $html_rest    = strip_tags($html_snippet, "<b>"); # Don't remove <b> tags
+  # Don't remove <b> tags, but remove the other tags.
+  # $html_rest becomes "Now, for something very <b>bold</b>!":
+    $html_rest    = strip_tags($html_snippet, "<b>"); 
 
     echo '$html_rest: ' . htmlspecialchars($html_rest);
 
   ?>
 
-  See also <a href='htmlspecialchars.html'>htmlspecialchars.html</a>.
+  <p>See also <a href='htmlspecialchars.html'>htmlspecialchars.html</a>.
     
 </body>
 </html>
