@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>array_key_exists</title>
+</head>
+<body>
+
+
+  <?php
+      
+    $dict = array ('one' =>  1, 'two' =>  2, 'three' =>  3);
+
+    if (array_key_exists('one', $dict)) echo "key <i>one</i> exists<br>"; else echo "key <i>one</i> does not exist<br>";
+    if (array_key_exists('foo', $dict)) echo "key <i>foo</i> exists<br>"; else echo "key <i>foo</i> does not exist<br>";
+
+  ?>
+
+  <p>See also <a href='associative_array.html'>associative_array.html<a/>.
+   
+
+
+</body>
+</html>
+
