@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Form with name array</title>
+</head>
+<body>
+
+  <form action="#" method="post">
+
+  <!--
+
+    With this weird person[0][first_name] names, it's possible
+    to access the $_POST variable more convenently as an
+    array.
+
+  -->
+
+  <b>First Person</b><br>
+    First name: <input name="person[0][first_name]" value="Peter"  />
+    Last name:  <input name="person[0][last_name]"  value="Mayer"  />
+
+  <p><b>Second Person Person</b><br>
+    First name: <input name="person[1][first_name]" value="Diana"  />
+    Last name:  <input name="person[1][last_name]"  value="Muller" />
+
+  <p><input type="submit" value="Go">
+    
+  </form>
+
+  <?php
+
+    foreach ($_POST['person'] as $person_no => $person_names) {
+
+      print "<p>Person " . $person_no . ":<br>";
+
+      foreach ($person_names as $attr => $name) {
+        print $attr . " = " . $name . "<br>";
+      }
+
+    }
+
+  ?>
+
+</body>
+</html>
+
