@@ -1,0 +1,19 @@
+<html>
+<head><title>stripslashes()</title></head>
+<body>
+
+<?php
+
+  $str  = 'foo\'bar\\baz/qux';
+
+  echo "$str<br>\n";
+
+  $str_ = stripslashes($str);
+
+  echo $str_;
+
+?>
+
+
+</body>
+</html>
