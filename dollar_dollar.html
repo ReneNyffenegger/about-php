@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>$$</title>
+</head>
+<body>
+
+  <?php
+
+     $foo = 'original foo';
+     $bar = 'original bar';
+     $baz = 'original baz';
+
+     $var_name = 'bar';
+
+     $$var_name = "<b>changed</b> $var_name";
+
+     print "foo: $foo<br>";
+     print "bar: $bar<br>";
+     print "baz: $baz";
+
+  ?>
+
+</body>
+</html>
+
