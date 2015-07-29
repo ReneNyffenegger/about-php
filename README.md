@@ -18,4 +18,3 @@ the Uniform Server installation.
 
 [These lines from .htaccess](https://raw.githubusercontent.com/ReneNyffenegger/about-php/master/.htaccess) are needed for apache to execute
 `<?php .... ?>` as php code.
-
