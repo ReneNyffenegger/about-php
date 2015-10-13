@@ -1,0 +1,49 @@
+<html>
+<head><title>PDO - SQLite: Insert values</title></head>
+<body>
+
+<?php
+
+  $db = new PDO("sqlite:the.db"); 
+  $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  try {
+    $stmt_h = $db -> prepare ('insert into foo values (:val_1, :val_2)');
+
+    $stmt_h -> bindParam(':val_1', $v1);
+    $stmt_h -> bindParam(':val_2', $v2);
+
+    $v1 = 1;
+    $v2 ='one';
+    $stmt_h -> execute();
+
+    $v1 = 2;
+    $v2 ='two';
+    $stmt_h -> execute();
+
+    $v1 = 3;
+    $v2 ='three';
+    $stmt_h -> execute();
+
+    $v1 = 4;
+    $v2 ='four';
+    $stmt_h -> execute();
+
+    $v1 = 5;
+    $v2 ='five';
+    $stmt_h -> execute();
+
+  }
+  catch(PDOException $e) {
+
+    print ("exception " . $e->getMessage());
+  
+  }
+
+  print ("<p><a href='04_select_values.html'>Select</a> the inserted values");
+
+
+?>
+
+</body>
+</html>
