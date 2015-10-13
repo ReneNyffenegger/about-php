@@ -4,6 +4,6 @@
 
 @mkdir %about_php_dir%
 
-@copy /y *.html       %about_php_dir%
-@copy /y *.php        %about_php_dir%
-@copy /y .htaccess    %about_php_dir%
+@xcopy /e *.html       %about_php_dir%
+@xcopy /e *.php        %about_php_dir%
+@xcopy /e .htaccess    %about_php_dir%
