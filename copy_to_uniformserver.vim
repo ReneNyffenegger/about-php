@@ -1,5 +1,6 @@
-autocmd BufWritePost  */about/php/**/*.html call CopyToUniformServer(expand('%'))
-autocmd BufWritePost  */about/php/**/*.php  call CopyToUniformServer(expand('%'))
+autocmd BufWritePost  */about/php/**/*.html     call CopyToUniformServer(expand('%'))
+autocmd BufWritePost  */about/php/**/*.php      call CopyToUniformServer(expand('%'))
+autocmd BufWritePost  */about/php/**/.htaccess  call CopyToUniformServer(expand('%'))
 
 fu! CopyToUniformServer(fileName)
 
