@@ -1,0 +1,39 @@
+<html>
+<head><title>PDO - SQLite: Select values with params</title></head>
+<body>
+
+<?php
+
+  $db = new PDO("sqlite:the.db"); 
+  $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  try {
+
+    $stmt_h = $db -> prepare('select * from foo where col_1 > :param_1 and col_2 like :param_2');
+
+    $stmt_h -> execute(array(1, '%o%'));
+
+    $res = $stmt_h -> fetchAll();
+
+
+    print '<table>';
+    foreach ($res as $row) {
+
+      print '<tr><td>' . $row['col_1'] . '</td><td>' . $row['col_2'] . '</td></tr>';
+
+    }
+    print '</table>';
+
+  }
+  catch(PDOException $e) {
+
+    print ("exception " . $e->getMessage());
+  
+  }
+
+  print "<p><a href='99_clean_up.html'>clean up</a>";
+
+?>
+
+</body>
+</html>

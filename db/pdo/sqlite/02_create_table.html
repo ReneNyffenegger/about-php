@@ -1,0 +1,30 @@
+<html>
+<head><title>PDO - SQLite: Create table</title></head>
+<body>
+
+<?php
+
+  $db = new PDO("sqlite:the.db"); 
+  $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  try {
+    $db -> exec('create table foo (col_1 number, col_2 varchar2)');
+
+    print ("Table foo created");
+
+    print ("<p><a href='02_create_table.html'>Create table again</a> and receive an error");
+
+  }
+  catch(PDOException $e) {
+
+    print ("exception " . $e->getMessage());
+  
+  }
+
+  print ("<p><a href='03_insert_values.html'>Insert values</a> into table");
+
+?>
+
+</body>
+</html>
+

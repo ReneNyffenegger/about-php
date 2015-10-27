@@ -1,0 +1,35 @@
+<html>
+<head><title>PDO - SQLite: Select values</title></head>
+<body>
+
+<?php
+
+  $db = new PDO("sqlite:the.db"); 
+  $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  try {
+
+    $res = $db -> query('select * from foo order by col_2');
+
+
+    print '<table>';
+    foreach ($res as $row) {
+
+      print '<tr><td>' . $row['col_1'] . '</td><td>' . $row['col_2'] . '</td></tr>';
+
+    }
+    print '</table>';
+
+  }
+  catch(PDOException $e) {
+
+    print ("exception " . $e->getMessage());
+  
+  }
+
+  print "<p><a href='05_select_values_with_param.html'>Select</a> valules with parameter";
+
+?>
+
+</body>
+</html>
