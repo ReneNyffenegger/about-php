@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>dir</title>
+</head>
+<body>
+
+<?php
+
+   $dir = dir("/tmp");
+
+   echo "Handle: " . $dir->handle . "<p>";
+   echo "Path: "   . $dir->path   . "<p>";
+
+   while (false !== ($entry = $dir->read())) {
+      echo $entry."<br>";
+   }
+   $dir->close()
+
+?>
+
+</body>
+</html>

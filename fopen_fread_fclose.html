@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>fopen fread fclose</title>
+</head>
+<body>
+
+<code><pre>
+<?php
+
+  $f = fopen(__FILE__, 'r');
+
+  while(!feof($f)) {
+
+    $txt = fread($f, 1024);
+    print htmlspecialchars($txt);
+
+  }
+  fclose($f);
+
+?>
+</pre></code>
+
+</body>
+</html>
