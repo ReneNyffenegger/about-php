@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Browse Files</title>
+</head>
+<body>
+
+<?php
+  $q  = $_GET['q'];
+
+  if (is_dir($q)) {
+    print "<h1>Directory $q</h1>";
+
+    $dir = dir($q);
+
+    while (false !== ($entry = $dir->read())) {
+       echo "<a href='?q=$q/" . $entry . "'>$entry</a><br>";
+    }
+    $dir->close();
+
+  }
+  elseif (is_file($q)) {
+    print "<h1>File $q</h1>"; 
+
+    print "<code><pre>";
+
+    $f = fopen($q, 'r');
+  
+    while(!feof($f)) {
+  
+      $txt = fread($f, 1024);
+      print htmlspecialchars($txt);
+  
+    }
+    fclose($f);
+
+    print "</code></pre>";
+  }
+  else {
+     print "$q is neither file nor directory"; 
+  }
+
+  print "<p>";
+
+?>
+
+</body>
+</html>
