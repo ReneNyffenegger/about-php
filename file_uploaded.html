@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Post answer</title>
+</head>
+<body>
+
+  The content of <b><?php echo $_FILES['chosenFile']['name']; ?></b> is: <pre><code><?php echo file_get_contents($_FILES['chosenFile']['tmp_name']); ?></code></pre>
+
+  <p><a href='file_upload.html'>Upload another file</a>.
+
+</body>
+</html>
