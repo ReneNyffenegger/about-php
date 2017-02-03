@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>func_get_args</title>
+</head>
+<body>
+
+<?php
+
+  func_1('foo', 'bar', 'baz');
+  func_2('one', 'two', 'three', 'four');
+  
+  function func_1($arg_1, $arg_2) {
+  
+    print "<b>func_1</b><br>\n";
+    foreach (func_get_args() as $arg) {
+       print "$arg<br>\n";
+    }
+  
+  }
+  function func_2($arg_1, $arg_2) {
+  
+    print "<p><b>func_2</b><br>\n";
+    print "arg_1 = $arg_1<br>\n";
+    print "arg_2 = $arg_2<br>\n";
+
+    $additional_args = array_slice(func_get_args(), 2);
+
+    foreach ($additional_args as $additional_arg) {
+      print "additional arg=$additional_arg<br>\n";
+    }
+  
+  }
+
+?>
+
+</body>
+</html>
