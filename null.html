@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>PHP: null type / NULL value</title></head>
+<body>
+
+  <?php function tf($val) { if ($val) { print('true'); } else { print('false'); } } ?>
+
+  <table summary='comparing NULLs'>
+    <tr><td> 0    ==  NULL       </td><td><?php tf( 0    ==  NULL       );  ?></td></tr> <!-- true    -->
+    <tr><td> 0    === NULL       </td><td><?php tf( 0    === NULL       );  ?></td></tr> <!-- false   -->
+    <tr><td> 42   ==  NULL       </td><td><?php tf( 42   ==  NULL       );  ?></td></tr> <!-- false   -->
+    <tr><td> 42   === NULL       </td><td><?php tf( 42   === NULL       );  ?></td></tr> <!-- false   -->
+    <tr><td> NULL ==  NULL       </td><td><?php tf( NULL ==  NULL       );  ?></td></tr> <!-- true    -->
+    <tr><td> NULL === NULL       </td><td><?php tf( NULL === NULL       );  ?></td></tr> <!-- true    -->
+    <tr><td> NULL ==  $undef_var </td><td><?php tf( NULL ==  $undef_var );  ?></td></tr> <!-- true    -->
+    <tr><td> NULL === $undef_var </td><td><?php tf( NULL === $undef_var );  ?></td></tr> <!-- true    -->
+  </table>
+
+</body>
+</html>

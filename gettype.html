@@ -6,12 +6,16 @@
 
 <body>
 
+  <?php function tf($val) { if ($val) { print 'true' } else { print 'false' } ?>
+
   <table summary='gettype'>
-    <tr><td>42                  </td><td><?php print gettype( 42                 );  ?></td></tr> <!-- integer    -->
-    <tr><td>42.42               </td><td><?php print gettype( 42.42              );  ?></td></tr> <!-- double     -->
-    <tr><td>TRUE                </td><td><?php print gettype( TRUE               );  ?></td></tr> <!-- boolean    -->
-    <tr><td>array('one'       ) </td><td><?php print gettype( array('one'      ) );  ?></td></tr> <!-- array      -->
-    <tr><td>array('one =&gt; 1) </td><td><?php print gettype( array('one' => 1 ) );  ?></td></tr> <!-- array      -->
+    <tr><td>42                  </td><td><?php   ?></td></tr> <!-- integer    -->
+    <tr><td>42.42               </td><td><?php   ?></td></tr> <!-- double     -->
+    <tr><td>TRUE                </td><td><?php   ?></td></tr> <!-- boolean    -->
+    <tr><td>array('one'       ) </td><td><?php   ?></td></tr> <!-- array      -->
+    <tr><td>array('one =&gt; 1) </td><td><?php   ?></td></tr> <!-- array      -->
+    <tr><td>NULL                </td><td><?php   ?></td></tr> <!-- NULL       -->
+    <tr><td>$undefined_var      </td><td><?php   ?></td></tr> <!-- NULL       -->
   </table>
 
 </body>

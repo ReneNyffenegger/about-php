@@ -1,6 +1,1 @@
-AddType application/x-httpd-php .html .htm
-#
-# TODO: Why not:
-#
-# AddHandler php5-fastcgi .php .php5 .htm .html
-#
+AddHandler php5-fastcgi .php .php5 .htm .html
