@@ -1,1 +1,2 @@
-AddHandler php5-fastcgi .php .php5 .htm .html
+# AddHandler php5-fastcgi .php .php5 .htm .html
+AddHandler application/x-httpd-php .html .htm
