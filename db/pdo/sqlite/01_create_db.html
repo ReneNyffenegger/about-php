@@ -4,8 +4,13 @@
 
 <?php
 
-  $db = new PDO("sqlite:the.db"); 
+  $dbFile = 'the.db';
+  if (file_exists($dbFile)) {
+     echo("File $dbFile exists. It is going to be deleted.<p>");
+     unlink($dbFile);
+  }
 
+  $db = new PDO("sqlite:the.db"); 
 
 ?>
 
