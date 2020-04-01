@@ -6,16 +6,14 @@
 
 <body>
 
-  <?php function tf($val) { if ($val) { print 'true' } else { print 'false' } ?>
-
   <table summary='gettype'>
-    <tr><td>42                  </td><td><?php   ?></td></tr> <!-- integer    -->
-    <tr><td>42.42               </td><td><?php   ?></td></tr> <!-- double     -->
-    <tr><td>TRUE                </td><td><?php   ?></td></tr> <!-- boolean    -->
-    <tr><td>array('one'       ) </td><td><?php   ?></td></tr> <!-- array      -->
-    <tr><td>array('one =&gt; 1) </td><td><?php   ?></td></tr> <!-- array      -->
-    <tr><td>NULL                </td><td><?php   ?></td></tr> <!-- NULL       -->
-    <tr><td>$undefined_var      </td><td><?php   ?></td></tr> <!-- NULL       -->
+    <tr><td>42                  </td><td><?php echo gettype( 42               ); ?></td></tr> <!-- integer    -->
+    <tr><td>42.42               </td><td><?php echo gettype( 42.42            ); ?></td></tr> <!-- double     -->
+    <tr><td>TRUE                </td><td><?php echo gettype( TRUE             ); ?></td></tr> <!-- boolean    -->
+    <tr><td>array('one'       ) </td><td><?php echo gettype( array('one'    ) ); ?></td></tr> <!-- array      -->
+    <tr><td>array('one'=&gt; 1) </td><td><?php echo gettype( array('one'=> 1) ); ?></td></tr> <!-- array      -->
+    <tr><td>NULL                </td><td><?php echo gettype( NULL             ); ?></td></tr> <!-- NULL       -->
+    <tr><td>$undefined_var      </td><td><?php echo gettype( $undefined_var   ); ?></td></tr> <!-- NULL       -->
   </table>
 
 </body>
