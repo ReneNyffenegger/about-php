@@ -6,16 +6,19 @@
 
   <?php
 
-    echo "val_1: " . $_GET['val_1'] . "<br>";
-    echo "val_2: " . $_GET['val_2'] . "<br>";
+    $val_1=array_key_exists('val_1', $_GET) ? $_GET['val_1'] : '';
+    $val_2=array_key_exists('val_2', $_GET) ? $_GET['val_2'] : '';
+
+    echo "val_1: " . $val_1 . "<br>";
+    echo "val_2: " . $val_2 . "<br>";
 
   ?>
 
   <p>
 
   <form action='#' method='get' style='background-color:#f93'>
-    Val 1: <input type='text' name='val_1' value='<?php echo $_GET['val_1'] ?>'><br>
-    Val 2: <input type='text' name='val_2' value='<?php echo $_GET['val_2'] ?>'><br>
+     Val 1: <input type='text' name='val_1' value='<?php echo $val_1 ?>'><br>
+     Val 2: <input type='text' name='val_2' value='<?php echo $val_2 ?>'><br>
     <input type='submit' value='go!'>
   </form>
 
