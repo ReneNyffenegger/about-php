@@ -41,7 +41,7 @@ foreach (array (
   'SERVER_SOFTWARE',
   ) as $var) {
 
-  print "<tr><td>$var</td><td>" . $_SERVER[$var] . "</td></tr>";
+  print "<tr><td>$var</td><td>" . ( array_key_exists($var, $_SERVER) ? $_SERVER[$var] : '<i>undef</i>' ) . "</td></tr>";
 
 }
 
@@ -52,7 +52,7 @@ foreach (array (
 <p><a href='_SERVER.html?foo=bar'>Show HTTP_REFERRER and QUERY_STRING</a>
 
 <form method="post">
-  <input name="foo" value="bar"> 
+  <input name="foo" value="bar">
   <input type="submit" value="Try POST method">
 </form>
 
@@ -68,12 +68,11 @@ foreach (array (
     <tr><td><code>__FILE__                   </code></td><td><?php echo __FILE__                    ?><tr>
     <tr><td><code>$_SERVER['PATH_TRANSLATED']</code></td><td><?php echo $_SERVER['PATH_TRANSLATED'] ?><tr>
   </table>
-    bu clicking on these urls 
-    <a href='/about_php/_SERVER.html'>/about_php/_SERVER.html</a>, 
-    <a href='/about_php/_SERVER.html/some/inexisting/path'>/about_php/_SERVER/some/inexisting/path</a>,
-    <a href='/about_php/_SERVER.html?foo=bar'>/about_php/_SERVER.html?foo=bar</a>
-    
+    bu clicking on these urls
+    <a href='_SERVER.html'>_SERVER.html</a>,
+    <a href='_SERVER.html/some/inexisting/path'>_SERVER/some/inexisting/path</a>,
+    <a href='_SERVER.html?foo=bar'>_SERVER.html?foo=bar</a>
+
 
 </body>
 </html>
-
