@@ -6,14 +6,24 @@
 
 <body>
 
+<?php
+
+   class CLS { }
+   $obj = new CLS;
+
+?>
+
   <table summary='gettype'>
     <tr><td>42                  </td><td><?php echo gettype( 42               ); ?></td></tr> <!-- integer    -->
     <tr><td>42.42               </td><td><?php echo gettype( 42.42            ); ?></td></tr> <!-- double     -->
+    <tr><td>'hello world'       </td><td><?php echo gettype('hello world'     ); ?></td></tr> <!-- string     -->
     <tr><td>TRUE                </td><td><?php echo gettype( TRUE             ); ?></td></tr> <!-- boolean    -->
     <tr><td>array('one'       ) </td><td><?php echo gettype( array('one'    ) ); ?></td></tr> <!-- array      -->
     <tr><td>array('one'=&gt; 1) </td><td><?php echo gettype( array('one'=> 1) ); ?></td></tr> <!-- array      -->
     <tr><td>NULL                </td><td><?php echo gettype( NULL             ); ?></td></tr> <!-- NULL       -->
+    <tr><td>$obj                </td><td><?php echo gettype( $obj             ); ?></td></tr> <!-- object     -->
     <tr><td>$undefined_var      </td><td><?php echo gettype( $undefined_var   ); ?></td></tr> <!-- NULL       -->
+    <tr><td>gettype(0)          </td><td><?php echo gettype( gettype(0)       ); ?></td></tr> <!-- string     -->
   </table>
 
 </body>
