@@ -41,7 +41,7 @@ foreach (array (
   'SERVER_SOFTWARE',
   ) as $var) {
 
-  print "<tr><td>$var</td><td>" . ( array_key_exists($var, $_SERVER) ? $_SERVER[$var] : '<i>undef</i>' ) . "</td></tr>";
+  print "<tr><td>$var</td><td>" . ( array_key_exists($var, $_SERVER) ? htmlspecialchars($_SERVER[$var]) : '<i>undef</i>' ) . "</td></tr>";
 
 }
 
