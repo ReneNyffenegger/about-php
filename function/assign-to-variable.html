@@ -1,0 +1,21 @@
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Assinging a function to a variable</title>
+</head>
+<body>
+
+<?php
+
+  $f = function($arg) {
+    print("arg = $arg<br>");
+  };
+
+  print("<code>gettype(\$f)</code> = " . gettype($f) . "<br>");
+  print("Going to call <code>\$f(42)</code><br>");
+  $f(42);
+
+?>
+
+</body>
+</html>
