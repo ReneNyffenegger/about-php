@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>array_map</title>
+</head>
+<body>
+
+<?php
+
+  function square($s) {
+     return $s * $s;
+  }
+
+  $numbers = array(1,4,6,2,1,3);
+  $squared = array_map('square', $numbers);
+
+  print('Squared: <ul>');
+  foreach ($squared as $s) {
+     print("<li>$s");
+  }
+  print("</ul>");
+
+?>
+
+</body>
+</html>
