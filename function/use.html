@@ -9,15 +9,12 @@
 
   $var = 'before';
 
-  $f = function($arg) {
-    global $var;
-    print("arg = $arg<br>");
-    print("var = $var<br>");
+  $f = function($arg) use ($var) {
+     print("var = $var<br>");
   };
 
   $var = 'after';
 
-  print("<code>gettype(\$f)</code> = " . gettype($f) . "<br>");
   print("Going to call <code>\$f(42)</code><br>");
   $f(42);
 
@@ -25,3 +22,4 @@
 
 </body>
 </html>
+
