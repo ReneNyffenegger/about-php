@@ -9,10 +9,10 @@
 <pre>
 <?php
 
-    $num = 42;
-    $txt ='Hello world';
-    $ary =['foo', 'bar', 'baz'];
-    $dct =['num' => 99, 'txt' => 'ciao'];
+   $num = 42;
+   $txt ='Hello world';
+   $ary =['foo', 'bar', 'baz'];
+   $dct =['num' => 99, 'txt' => 'ciao'];
 
    var_dump($num, $txt, $ary, $dct);
 
