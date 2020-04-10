@@ -2,46 +2,16 @@
 <head><title>$_SERVER</title></head>
 <body>
 
-<table summary='getenv'>
+<table summary='_$SERVER key/values'>
 
 <?php
 
-foreach (array (
-  'argc',
-  'argv',
-  'DOCUMENT_ROOT',
-  'GATEWAY_INTERFACE',
-  'HTTP_ACCEPT',
-  'HTTP_ACCEPT_CHARSET',
-  'HTTP_ACCEPT_ENCODING',
-  'HTTP_ACCEPT_LANGUAGE',
-  'HTTP_CONNECTION',
-  'HTTP_HOST',
-  'HTTP_REFERER',
-  'HTTP_USER_AGENT',
-  'HTTP_X_FORWARDED_HOST',
-  'HTTPS',
-  'PATH_TRANSLATED',
-  'PHP_AUTH_PW',
-  'PHP_AUTH_USER',
-  'PHP_SELF',
-  'QUERY_STRING',
-  'REMOTE_ADDR',
-  'REMOTE_HOST',
-  'REMOTE_PORT',
-  'REQUEST_METHOD',
-  'REQUEST_URI',
-  'SCRIPT_FILENAME',
-  'SCRIPT_NAME',
-  'SERVER_ADMIN',
-  'SERVER_NAME',
-  'SERVER_PORT',
-  'SERVER_PROTOCOL',
-  'SERVER_SIGNATURE',
-  'SERVER_SOFTWARE',
-  ) as $var) {
+ksort($_SERVER);
+foreach ($_SERVER as $key => $value) {
 
-  print "<tr><td>$var</td><td>" . ( array_key_exists($var, $_SERVER) ? htmlspecialchars($_SERVER[$var]) : '<i>undef</i>' ) . "</td></tr>";
+  if ($key != 'argc' and $key != 'argv') {
+     print "<tr><td>$key</td><td>" . htmlspecialchars($value) . "</td></tr>";
+  }
 
 }
 
@@ -51,28 +21,17 @@ foreach (array (
 
 <p><a href='_SERVER.html?foo=bar'>Show HTTP_REFERRER and QUERY_STRING</a>
 
+
 <form method="post">
   <input name="foo" value="bar">
   <input type="submit" value="Try POST method">
 </form>
 
-<h1>Links</h1>
-   See also <a href='getenv.html'>getenv.html</a>.
-<p>Compare <code>$_SERVER['SCRIPT_FILENAME']</code> with <a href='__LINE__FILE__DIR__.html'><code>__FILE__</code></a>
 
-<p>Also compare
-  <table>
-    <tr><td><code>$_SERVER['PHP_SELF']       </code></td><td><?php echo $_SERVER['PHP_SELF'       ] ?><tr>
-    <tr><td><code>$_SERVER['REQUEST_URI']    </code></td><td><?php echo $_SERVER['REQUEST_URI'    ] ?><tr>
-    <tr><td><code>$_SERVER['SCRIPT_NAME']    </code></td><td><?php echo $_SERVER['SCRIPT_NAME'    ] ?><tr>
-    <tr><td><code>__FILE__                   </code></td><td><?php echo __FILE__                    ?><tr>
-    <tr><td><code>$_SERVER['PATH_TRANSLATED']</code></td><td><?php echo $_SERVER['PATH_TRANSLATED'] ?><tr>
-  </table>
-    bu clicking on these urls
+<p>Also use these links:
     <a href='_SERVER.html'>_SERVER.html</a>,
     <a href='_SERVER.html/some/inexisting/path'>_SERVER/some/inexisting/path</a>,
     <a href='_SERVER.html?foo=bar'>_SERVER.html?foo=bar</a>
-
 
 </body>
 </html>
