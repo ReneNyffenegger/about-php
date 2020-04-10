@@ -1,29 +1,31 @@
-<html><head><title>array</title></head>
+<html><head><title>Add elements to an array</title></head>
 <body>
 
   <?php 
    
-    $a = array('one', 'two', 'three'); // Array with three elements
+ //
+ // Create an array with three elements:
+ //
+    $a = array('one', 'two', 'three');
     
+ //
+ // Append 'four' to the array:
+ //
     $a[] = 'four';                     // Append 'four' to the array:
-    array_push($a, 'five');            // Same thing, but with array_push:
 
-    // Iterating over the array's elements:
+ //
+ // same thing, but with array_push
+ //
+    array_push($a, 'five');
+
+ //
+ // Print elements
+ //
     foreach ($a as $val) {
-      print "<br>$val";
-    }
-
-    print "<p>";
-
-    foreach ($a as $ix => $val) {
-      print "<br>$ix: $val";
+       print("<br>$val");
     }
 
   ?>
 
-  <p>See also <a href='associative_array.html'>associative_array.html</a> and
-     <a href='list.html'>list()</a>.
-
 </body>
 </html>
-
