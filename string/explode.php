@@ -9,7 +9,7 @@ printQueryOfURI('https://foo.bar/baz?this=wrong?query');
 
 function printQueryOfURI($uri) {
 
-  $res = explode('?', $uri, 2);
+  $res = explode('?', $uri, 2); // 2: limit result to maximally two elements
 
   $url   = $res[0];
   if (count($res) == 2) {
